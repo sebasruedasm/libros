@@ -1,0 +1,70 @@
+
+<header>
+  <div class="header-container">
+    <span class="logo">
+      <a routerLink="/"><img src="../assets/images/logo.png" alt="Logo"></a>
+    </span>
+    <nav class="nav-links">
+      <span 
+        routerLink="/inicio" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact: true}"
+      >INICIO</span>
+      
+      <span 
+        routerLink="/producto" 
+        routerLinkActive="active"
+      >LIBROS</span>
+      
+      @if (!localStorage.getItem('token')) {
+        <span routerLink="/login">INICIAR SESION</span>
+      } @else {
+        <span>{{ getUserName().toUpperCase() }}</span>
+        <span (click)="logOut()">CERRAR SESION</span>
+      }
+    </nav>
+  </div>
+</header>
+
+<main >
+  <section class="presentation">
+    <div class="container">
+      <div class="presentation-content">
+        <div class="presentation-text">
+          <h1>Explora el Mundo de los Libros</h1>
+          <p>Sumérgete en nuestra colección de libros y descubre historias fascinantes.</p>
+          <button mat-raised-button color="primary" routerLink="/producto">Explorar Libros</button>
+        </div>
+        <div class="imagen">
+          <img src="../assets/images/fondo.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a routerLink="/">Términos de Uso</a>
+      <a routerLink="/">Política de Privacidad y Lectura</a>
+    </div>
+    <div class="contact-info">
+      📍 Librería Digital BOOKTECH | Conectando Lectores, Inspirando Mentes
+      📞 Soporte al Cliente: +1 (123) 456-7890
+    </div>
+    <div class="social-links">
+      <a href="https://web.facebook.com/" title="Síguenos en Facebook">
+        <img src="../assets/images/facebook.png" alt="Facebook BOOKTECH">
+      </a>
+      <a href="https://x.com/" title="Síguenos en X">
+        <img src="../assets/images/x.png" alt="X BOOKTECH">
+      </a>
+      <a href="https://www.instagram.com/" title="Síguenos en Instagram">
+        <img src="../assets/images/instagram.png" alt="Instagram BOOKTECH">
+      </a>
+    </div>
+  </div>
+</footer>
+
+

@@ -1,0 +1,171 @@
+
+
+/* Otros estilos ya existentes */
+
+header {
+    margin-bottom: 20px;
+  }
+  .logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-left:10%;
+  }
+  
+  main {
+    min-height: calc(100vh - 180px);
+  }
+  
+  footer {
+    margin-top: auto;
+  }
+  
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0px;
+    
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  /* Estilos de la sección de presentación */
+  .presentation {
+    text-align: center;
+    padding: 0 auto;
+  }
+  
+  .presentation-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .presentation-text {
+    flex: 1;
+    text-align: left;
+    color: #521C47;
+  }
+  
+  .presentation-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #521C47;
+  }
+  
+  .imagen {
+    flex: 1;
+    background-image: url('https://fakestoreapi.com/icons/intro.svg');
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    margin-left: 200px; /* Ajusta el margen según sea necesario */
+    border-radius: 5px;
+  }
+  
+  .presentation h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos del pie de página */
+  footer {
+    background-color: #F3EAF1;
+    // background-color: #F3EAF1;
+  
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .footer-links a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .contact-info p {
+    margin: 10px 0;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+  }
+  
+  .contact-info p {
+    margin: 10px 0;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los íconos */
+    margin-top: 20px; /* Espacio entre el texto de contacto y los íconos */
+  }
+  
+  .social-links a {
+    display: inline-block;
+  }
+  
+  .social-links img {
+    width: 24px;  /* Ajusta el tamaño del ícono */
+    height: 24px; /* Ajusta el tamaño del ícono */
+    transition: transform 0.3s;
+  }
+  
+  .social-links img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+  }
+  
+  /* Estilos proporcionados para los botones */
+  header {
+    display: flex;
+    justify-content: space-between; /* Coloca los elementos a los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 20px;
+    padding: 5px 20px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Sombra en el margen inferior */
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
+  button[mat-raised-button] {
+    // width: 100%;
+    // padding: 10px;
+    // border-radius: 5px;
+    background-color: #B88DB0 !important;
+    color: #ffffff !important;
+    &:hover {
+      background-color: #802C6E !important;
+    }
+  }
+  

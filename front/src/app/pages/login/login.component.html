@@ -1,0 +1,82 @@
+<!-- <header>
+  <span class="logo"><a routerLink="/"><img src="../assets/images/logo.png" alt=""></a></span>
+  <div class="example-button-row">
+      <button mat-raised-button color="primary" routerLink="/inicio">Inicio</button>
+      <button mat-raised-button color="primary" routerLink="/producto">Libros</button>
+      <button mat-raised-button color="primary" routerLink="/login">Iniciar Sesión</button>
+  </div>
+</header> -->
+
+<header>
+    <div class="header-container">
+      <span class="logo">
+        <a routerLink="/"><img src="../assets/images/logo.png" alt="Logo"></a>
+      </span>
+      <nav class="nav-links">
+        <span 
+          routerLink="/inicio" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{exact: true}"
+        >INICIO</span>
+        
+        <span 
+          routerLink="/inicio" 
+          routerLinkActive="active"
+        >LIBROS</span>
+    
+        <span routerLink="/login"
+        routerLinkActive="active"
+        >INICIAR SESION</span>
+
+
+        
+      </nav>
+    </div>
+  </header>
+<main>
+  <section class="login-section">
+      <div class="login-content">
+          <h1>Iniciar Sesión</h1>
+          <form [formGroup]="loginForm">
+              <div class="form-group">
+                  <label for="username">Email:</label>
+                  <input type="text" id="username" formControlName="username" required>
+              </div>
+              <div class="form-group">
+                  <label for="password">Contraseña:</label>
+                  <div class="password-wrapper">
+                      <input [type]="hidePassword ? 'password' : 'text'" id="password" formControlName="password" required>
+                      <button type="button" mat-icon-button (click)="togglePasswordVisibility()">
+                          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                      </button>
+                  </div>
+              </div>
+              <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Iniciar Sesión</button>
+          </form>
+      </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a routerLink="/">Términos de Uso</a>
+      <a routerLink="/">Política de Privacidad y Lectura</a>
+    </div>
+    <div class="contact-info">
+      📍 Librería Digital BOOKTECH | Conectando Lectores, Inspirando Mentes
+      📞 Soporte al Cliente: +1 (123) 456-7890
+    </div>
+    <div class="social-links">
+      <a href="https://web.facebook.com/" title="Síguenos en Facebook">
+        <img src="../assets/images/facebook.png" alt="Facebook BOOKTECH">
+      </a>
+      <a href="https://x.com/" title="Síguenos en X">
+        <img src="../assets/images/x.png" alt="X BOOKTECH">
+      </a>
+      <a href="https://www.instagram.com/" title="Síguenos en Instagram">
+        <img src="../assets/images/instagram.png" alt="Instagram BOOKTECH">
+      </a>
+    </div>
+  </div>
+</footer>

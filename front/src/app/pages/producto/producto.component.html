@@ -1,0 +1,109 @@
+
+<header>
+  <div class="header-container">
+    <span class="logo">
+      <a routerLink="/"><img src="../assets/images/logo.png" alt="Logo"></a>
+    </span>
+    <nav class="nav-links">
+      <span 
+        routerLink="/inicio" 
+        routerLinkActive="active" 
+        (click)="getDataProduct()"
+        [routerLinkActiveOptions]="{exact: true}"
+      >INICIO</span>
+      
+      <span 
+        routerLink="/producto" 
+        routerLinkActive="active"
+      >LIBROS</span>
+      
+      @if (!localStorage.getItem('token')) {
+        <span routerLink="/login">INICIAR SESION</span>
+      } @else {
+        <span>{{ getUserName().toUpperCase() }}</span>
+        <span (click)="logout()">CERRAR SESION</span>
+      }
+    </nav>
+  </div>
+</header>
+
+<div class="body">
+<main>
+  <section class="product-list-section">
+    <div class="search-bar">
+      <form [formGroup]="searchForm" class="minimalist-search">
+        <div class="search-input-wrapper">
+          <input 
+            type="text" 
+            formControlName="search" 
+            placeholder="Buscar libros..."
+            class="minimalist-input"
+          >
+          <button 
+            mat-icon-button 
+            color="primary" 
+            type="submit" 
+            (click)="searchProduct()"
+            class="search-icon-button"
+          >
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </form>
+      <button 
+        mat-raised-button 
+        color="primary" 
+        type="button" 
+        routerLink="../add-product"
+        class="add-book-btn"
+      >
+        Añadir Libro
+      </button>
+    </div>
+    <div class="product-list">
+      @for (product of productos; track $index) {
+        <div class="product-item">
+          <img [src]="product.images" alt="{{product.titulo}} ">
+          <h2>{{ product.titulo }}</h2>
+          <p>Autor: {{ product.autor}}</p>
+          <p>Año: {{ product.anyo}}</p>
+          <p>Ciudad: {{ product.ciudad}}</p>
+          <p>Editorial: {{ product.editorial }}</p>
+            <!-- <div class="product-description">
+                
+            </div> -->
+          <div class="product-actions">
+            <button mat-raised-button color="accent" routerLink="../edit-product/{{product.id_libro}}">Editar</button>
+            <button mat-raised-button color="warn" (click)="deleteProducto(product.id_libro)">Eliminar</button>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</main>
+</div>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a routerLink="/">Términos de Uso</a>
+      <a routerLink="/">Política de Privacidad y Lectura</a>
+    </div>
+    <div class="contact-info">
+      📍 Librería Digital BOOKTECH | Conectando Lectores, Inspirando Mentes
+      📞 Soporte al Cliente: +1 (123) 456-7890
+    </div>
+    <div class="social-links">
+      <a href="https://web.facebook.com/" title="Síguenos en Facebook">
+        <img src="../assets/images/facebook.png" alt="Facebook BOOKTECH">
+      </a>
+      <a href="https://x.com/" title="Síguenos en X">
+        <img src="../assets/images/x.png" alt="X BOOKTECH">
+      </a>
+      <a href="https://www.instagram.com/" title="Síguenos en Instagram">
+        <img src="../assets/images/instagram.png" alt="Instagram BOOKTECH">
+      </a>
+    </div>
+  </div>
+</footer>

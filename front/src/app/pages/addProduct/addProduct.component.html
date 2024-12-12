@@ -1,0 +1,95 @@
+<!-- <header>
+  <span class="logo"><a routerLink="/"><img src="../assets/images/logo.png" alt="Logo"></a></span>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" routerLink="/inicio">Inicio</button>
+    <button mat-raised-button color="primary" routerLink="/producto">Libros</button>
+    <button mat-raised-button color="primary" (click)="logout()">Cerrar Sesión</button>
+  </div>
+</header> -->
+
+<header>
+  <div class="header-container">
+    <span class="logo">
+      <a routerLink="/"><img src="../assets/images/logo.png" alt="Logo"></a>
+    </span>
+    <nav class="nav-links">
+      <span 
+        routerLink="/inicio" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact: true}"
+      >INICIO</span>
+      
+      <span 
+        routerLink="/producto" 
+        routerLinkActive="active"
+      >LIBROS</span>
+      
+      @if (!localStorage.getItem('token')) {
+        <span routerLink="/login">INICIAR SESION</span>
+      } @else {
+        <span>{{ getUserName().toUpperCase() }}</span>
+        <span (click)="logout()">CERRAR SESION</span>
+      }
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="add-product-section">
+    <div class="add-product-content">
+      <h1>Añadir Libro</h1>
+      <form [formGroup]="productForm" >
+        <div class="form-group">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" formControlName="titulo" required>
+        </div>
+        <div class="form-group">
+          <label for="autor">Autor:</label>
+          <input type="text" id="autor" formControlName="autor" required>
+        </div>
+        <div class="form-group">
+          <label for="anyo">Año de Publicación:</label>
+          <input type="text" id="anyo" formControlName="anyo" required>
+        </div>
+        <div class="form-group">
+          <label for="ciudad">Ciudad:</label>
+          <input type="text" id="ciudad" formControlName="ciudad" required>
+        </div>
+        <div class="form-group">
+          <label for="image">URL de la Imagen:</label>
+          <input type="url" id="image" formControlName="images" required>
+        </div>
+        <div class="form-group">
+          <label for="editorial">Editorial:</label>
+          <input type="text" id="editorial" formControlName="editorial" required>
+        </div>
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Añadir Libro</button>
+        <button mat-raised-button class="cancelButton" color="primary" routerLink="/producto">Cancerlar</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a routerLink="/">Términos de Uso</a>
+      <a routerLink="/">Política de Privacidad y Lectura</a>
+    </div>
+    <div class="contact-info">
+      📍 Librería Digital BOOKTECH | Conectando Lectores, Inspirando Mentes
+      📞 Soporte al Cliente: +1 (123) 456-7890
+    </div>
+    <div class="social-links">
+      <a href="https://web.facebook.com/" title="Síguenos en Facebook">
+        <img src="../assets/images/facebook.png" alt="Facebook BOOKTECH">
+      </a>
+      <a href="https://x.com/" title="Síguenos en X">
+        <img src="../assets/images/x.png" alt="X BOOKTECH">
+      </a>
+      <a href="https://www.instagram.com/" title="Síguenos en Instagram">
+        <img src="../assets/images/instagram.png" alt="Instagram BOOKTECH">
+      </a>
+    </div>
+  </div>
+</footer>
